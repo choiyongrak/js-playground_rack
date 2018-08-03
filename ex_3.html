@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>소수 배열</title>
+</head>
+<body>
+    <h1>소수 목록들</h1>
+    <div id = "result"></div>
+    <script>
+        var numbers = {}
+        numbers.All = []
+        numbers.prime = []
+
+        numbers.isprime = function(number) {
+            for (var i = 2; i < number; i++){
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        numbers.addallnumber = function(max_num) {
+            for(var i = 2; i < max_num; i++){
+                this.All.push(i);
+            }
+        };    
+
+        numbers.addprime = function(number) {
+            for(var i = 0; i < this.All.length; i++){
+                var n = this.All[i];
+                if (this.isprime(n)){
+                    this.prime.push(n);
+                }
+            }
+        };
+
+        numbers.getAllPrimeNumbers = function() {
+            var ret = "";
+            ret += "<h2>전체 소수의 갯수 : " + this.prime.length + "</h2>";
+            for (var i = 0; i < this.prime.length; i++){
+                ret += (i+1) + "번째 소수 : " + this.prime[i] + "<br>";
+            }
+            return ret;
+        };
+    
+        numbers.addallnumber(10000)
+        numbers.addprime()
+        document.getElementById('result').innerHTML = numbers.getAllPrimeNumbers();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>구구단_함수 </title>
+</head>
+<body>
+    <script>
+    function gugudan (x) {
+        var ret = [];
+        for (i=1; i<10; i++){
+            ret[i] = x * i
+        }
+    return ret
+    }
+
+    function printresult (x, ret) {
+        document.write("<h2>" + (x) + "단</h2>")
+        for (n = 1; n < 10; n++) {
+        var str = "";
+        str += x
+        str += " x "
+        str += n
+        str += " = "
+        str += ret[n]
+        str += "<br>"
+        document.write(str) 
+        }
+    }
+
+    function main(n){
+        for (n = 2; n <10; n++){
+        var result = gugudan(n)
+        printresult(n,result);
+        }
+    }
+
+    main();
+
+    </script>
+</body>
+</html>

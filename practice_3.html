@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>while</title>
+</head>
+<body>
+    <script>
+    var sum = 0
+    var ans = prompt("숫자를 입력하세요. (1)")
+    
+    var a = Number(ans)
+    var s = Number(sum)
+
+    var b =1
+
+    while (a != 0) {
+        b++;
+        console.log(s + "+" + a)
+        s = s + a
+
+        var ans = prompt("숫자를 입력하세요. (" + b + ")")
+        var a = Number(ans)
+
+    }
+    document.write(s)
+
+    </script>
+</body>
+</html>
